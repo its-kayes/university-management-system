@@ -25,7 +25,6 @@ app.use(options)
 app.use('/api/v1', v1)
 
 app.all('*', (req: Request, res: Response) => {
-  //   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
   res.status(404).json({
     message: `Can't find ${req.originalUrl} on this server!`,
   })
