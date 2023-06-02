@@ -1,6 +1,6 @@
-import mongoose, { ConnectOptions } from "mongoose";
-import app from "./app";
-import config from "./config";
+import mongoose, { ConnectOptions } from 'mongoose'
+import app from './app'
+import config from './config'
 
 async function main() {
   try {
@@ -13,17 +13,17 @@ async function main() {
         } as ConnectOptions
       )
       .then(() => {
-        console.log("DB Connected!");
+        console.log('DB Connected!')
         app.listen(config.port, () =>
           console.log(`Server Started on Port: ${config.port}`)
-        );
+        )
       })
-      .catch((error) => {
-        console.error(error);
-      });
+      .catch(error => {
+        console.error(error)
+      })
   } catch (error) {
-    console.log("Failed to connect database", error);
+    console.log('Failed to connect database', error)
   }
 }
 
-main();
+main()

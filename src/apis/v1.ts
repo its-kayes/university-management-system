@@ -1,11 +1,11 @@
-import { Router } from "express";
+import { Router } from 'express'
 
-const router: Router = Router();
+const router: Router = Router()
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   res.json({
-    message: "Hello World!",
-  });
-});
+    message: 'Hello World!',
+  })
+})
 
-export { router as v1 };
+export { router as v1 }
