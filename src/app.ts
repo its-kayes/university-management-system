@@ -21,6 +21,7 @@ const options: express.RequestHandler[] = [
 
 app.use(options)
 
+// v1 APIs route
 app.use('/api/v1', v1)
 
 app.all('*', (req: Request, res: Response) => {
