@@ -3,6 +3,8 @@ import { UsersService } from './users.services'
 
 const saveUsers: RequestHandler = async (req, res, next) => {
   try {
+    // ============= ZOD Validate ============
+
     const users = req.body
     if (!users) {
       res.status(400).json({
