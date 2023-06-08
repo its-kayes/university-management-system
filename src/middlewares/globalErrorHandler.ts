@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
-import { NextFunction, Request, Response } from 'express'
+import { ErrorRequestHandler } from 'express'
 import config from '../config'
 import AppError from '../errors/AppError'
 import handleValidationError from '../errors/handleValidationError'
@@ -10,12 +10,7 @@ export type IGenericErrorMessage = {
   message: string
 }
 
-const globalErrorHandler = (
-  error: any,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   let statusCode = 500
   let message = 'Something went wrong !'
   let errorMessages: IGenericErrorMessage[] = []

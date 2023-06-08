@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import { saveUsers } from './users.controller'
+import { UsersController } from './users.controller'
 
 const router: Router = Router()
 
-router.post('/create-user', saveUsers)
+router.post('/create-user', UsersController.saveUsers)
 
 export { router as userRoutes }

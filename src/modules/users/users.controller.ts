@@ -1,11 +1,7 @@
-import { NextFunction, Request, Response } from 'express'
-import { saveUsersToDb } from './users.services'
+import { RequestHandler } from 'express'
+import { UsersService } from './users.services'
 
-export const saveUsers = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const saveUsers: RequestHandler = async (req, res, next) => {
   try {
     const users = req.body
     if (!users) {
@@ -15,7 +11,7 @@ export const saveUsers = async (
       })
     }
 
-    const result = await saveUsersToDb(users)
+    const result = await UsersService.saveUsersToDb(users)
 
     res.json({
       success: true,
@@ -25,4 +21,8 @@ export const saveUsers = async (
   } catch (error) {
     next(error)
   }
+}
+
+export const UsersController = {
+  saveUsers,
 }

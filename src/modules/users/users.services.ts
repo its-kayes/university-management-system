@@ -3,7 +3,7 @@ import { IUser } from './users.interface'
 import { User } from './users.model'
 import { getUserId } from './users.utility'
 
-export const saveUsersToDb = async (user: IUser) => {
+const saveUsersToDb = async (user: IUser) => {
   user.id = await getUserId()
 
   if (!user.password) {
@@ -16,4 +16,8 @@ export const saveUsersToDb = async (user: IUser) => {
   }
 
   return result
+}
+
+export const UsersService = {
+  saveUsersToDb,
 }
