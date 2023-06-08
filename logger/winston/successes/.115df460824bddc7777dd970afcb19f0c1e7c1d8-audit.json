@@ -1,20 +1,20 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\successes\\.115df460824bddc7777dd970afcb19f0c1e7c1d8-audit.json",
+  "files": [
+    {
+      "date": 1686211143438,
+      "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\successes\\uv_sus-2023-06-08-13.log",
+      "hash": "731510308ab1f31a7267eefc3365e7bcaf9ad797ea492a82a279fc00faf72f36"
     },
-    "auditLog": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\successes\\.115df460824bddc7777dd970afcb19f0c1e7c1d8-audit.json",
-    "files": [
-        {
-            "date": 1686211143438,
-            "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\successes\\uv_sus-2023-06-08-13.log",
-            "hash": "731510308ab1f31a7267eefc3365e7bcaf9ad797ea492a82a279fc00faf72f36"
-        },
-        {
-            "date": 1686211210988,
-            "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\successes\\uv_sus-2023-06-08-14.log",
-            "hash": "a1e9909940eab41919be0daecff0d1febee01bfb78b3323c49196dffdbc8c24f"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1686211210988,
+      "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\successes\\uv_sus-2023-06-08-14.log",
+      "hash": "a1e9909940eab41919be0daecff0d1febee01bfb78b3323c49196dffdbc8c24f"
+    }
+  ],
+  "hashType": "sha256"
 }
