@@ -1,30 +1,30 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\.cacd5b877eba340f58c85adbf77cb410f1338555-audit.json",
+  "files": [
+    {
+      "date": 1686211143444,
+      "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\uv_err-2023-06-08-13.log",
+      "hash": "ff1d70483f03a8f9a3ddd32a2cc82ff32e51dc822f9c719fe681a38fb22836c6"
     },
-    "auditLog": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\.cacd5b877eba340f58c85adbf77cb410f1338555-audit.json",
-    "files": [
-        {
-            "date": 1686211143444,
-            "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\uv_err-2023-06-08-13.log",
-            "hash": "ff1d70483f03a8f9a3ddd32a2cc82ff32e51dc822f9c719fe681a38fb22836c6"
-        },
-        {
-            "date": 1686211210993,
-            "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\uv_err-2023-06-08-14.log",
-            "hash": "8802c3ac87836a4af253ddae5e63cf9c25afa16e13fc051dd9cb01ba3584545b"
-        },
-        {
-            "date": 1686220988179,
-            "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\uv_err-2023-06-08-16.log",
-            "hash": "92e36603c335eefd0cfe386dd2b5de44c45b40844ce9bca017588f63d863eaea"
-        },
-        {
-            "date": 1686233580081,
-            "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\uv_err-2023-06-08-20.log",
-            "hash": "f7e17e2254f084e9a72256bfdb2ffb73a0465776ebff8b591db52752a6023679"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1686211210993,
+      "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\uv_err-2023-06-08-14.log",
+      "hash": "8802c3ac87836a4af253ddae5e63cf9c25afa16e13fc051dd9cb01ba3584545b"
+    },
+    {
+      "date": 1686220988179,
+      "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\uv_err-2023-06-08-16.log",
+      "hash": "92e36603c335eefd0cfe386dd2b5de44c45b40844ce9bca017588f63d863eaea"
+    },
+    {
+      "date": 1686233580081,
+      "name": "C:\\Users\\kayes\\Desktop\\Apollo\\m3\\logger\\winston\\errors\\uv_err-2023-06-08-20.log",
+      "hash": "f7e17e2254f084e9a72256bfdb2ffb73a0465776ebff8b591db52752a6023679"
+    }
+  ],
+  "hashType": "sha256"
 }

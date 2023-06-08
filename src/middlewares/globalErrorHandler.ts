@@ -1,26 +1,58 @@
-/* eslint-disable prefer-const */
+/* eslint-disable no-console */
+/* eslint-disable no-unused-expressions */
 import { NextFunction, Request, Response } from 'express'
 import config from '../config'
+import AppError from '../errors/AppError'
+import handleValidationError from '../errors/handleValidationError'
 
-type IGenericErrorMessage = {
+export type IGenericErrorMessage = {
   path: string | number
   message: string
 }
 
 const globalErrorHandler = (
-  err: Error,
+  error: any,
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  let message: string = (err.message as string) || 'Internal Server Error'
-  let errorMessage: IGenericErrorMessage[] = []
+  let statusCode = 500
+  let message = 'Something went wrong !'
+  let errorMessages: IGenericErrorMessage[] = []
 
-  res.status(500).json({
+  if (error?.name === 'ValidationError') {
+    const simplifiedError = handleValidationError(error)
+    statusCode = simplifiedError.statusCode
+    message = simplifiedError.message
+    errorMessages = simplifiedError.errorMessages
+  } else if (error instanceof AppError) {
+    statusCode = error?.statusCode
+    message = error.message
+    errorMessages = error?.message
+      ? [
+          {
+            path: '',
+            message: error?.message,
+          },
+        ]
+      : []
+  } else if (error instanceof Error) {
+    message = error?.message
+    errorMessages = error?.message
+      ? [
+          {
+            path: '',
+            message: error?.message,
+          },
+        ]
+      : []
+  }
+
+  res.status(statusCode).json({
     success: false,
     message,
-    errorMessage,
-    stack: config.env === 'development' ? err?.stack : undefined,
+    errorMessages,
+    stack: config.env === 'development' ? error?.stack : undefined,
   })
 
   next()
