@@ -1,23 +1,24 @@
 import { RequestHandler } from 'express';
+import httpStatus from 'http-status';
 import AppError from '../../errors/AppError';
+import sendResponse from '../../shared/sendResponse';
+import catchAsync from '../../util/catchAsync';
+import { IAcademicSemester } from './academicSemester.interface';
 import { AcademicSemesterService } from './academicSemester.service';
 
-const createSemester: RequestHandler = async (req, res, next) => {
-  try {
-    const { ...values } = req.body;
-    const result = await AcademicSemesterService.createSemester(values);
+const createSemester: RequestHandler = catchAsync(async (req, res, next) => {
+  const { ...values } = req.body;
+  const result = await AcademicSemesterService.createSemester(values);
 
-    if (!result) return next(new AppError('Error creating semester', 500));
+  if (!result) return next(new AppError('Error creating semester', 500));
 
-    res.status(201).json({
-      success: true,
-      message: 'Semester created successfully',
-      data: result,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+  sendResponse<IAcademicSemester>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Academic semester created successfully!',
+    data: result,
+  });
+});
 
 export const AcademicSemesterController = {
   createSemester,
